@@ -1,10 +1,9 @@
-from validator import Validator
 from screen import Screen
 from console import *
+from colorama import Fore
+from validator import Validator
+from baseclasses import Abstract_reader
 
-import colorama
-from colorama import Fore, Back, Style
-colorama.init(autoreset=False)
 
 
 """ 
@@ -28,7 +27,7 @@ colorama.init(autoreset=False)
 """
 
 
-class Value_reader:
+class Value_reader(Abstract_reader):
     """ Отримує дані від користувача та перевіряє їх з допомогою вказаного валідатора """
     def __init__(self, _screen: Screen, _validator: Validator = None) -> None:
         self._screen = _screen

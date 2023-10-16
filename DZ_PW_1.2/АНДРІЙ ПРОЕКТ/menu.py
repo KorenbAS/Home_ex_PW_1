@@ -1,10 +1,8 @@
-from console import *
-import readchar as rc
-import colorama
 import screen
-
+import readchar as rc
+from console import *
+from baseclasses import Abstract_view
 from colorama import Fore, Back, Style
-colorama.init(autoreset=True)
 
 """ 
 |------------------------------------------|
@@ -25,7 +23,7 @@ colorama.init(autoreset=True)
 """
 
 
-class Menu:
+class Menu(Abstract_view):
     """ Клас що описує сутність - меню """
     BREAK = -1
     NONE = -2
@@ -48,7 +46,7 @@ class Menu:
                 print(f'{Fore.BLACK}{Back.YELLOW}{item}')
 
     def start(self):
-        """ Взяємодіє з користувачем та повертаї індекс вибраного пункту меню """
+        """ Взяємодіє з користувачем та повертає індекс вибраного пункту меню """
         while True:
             self.draw()
             key = rc.readkey()

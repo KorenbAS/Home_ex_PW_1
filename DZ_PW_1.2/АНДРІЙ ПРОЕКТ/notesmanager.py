@@ -1,11 +1,10 @@
-from console import *
 import readchar as rc
-from messagebox import Messagebox
-from screen import Screen
+from console import *
 from notes import Notes
+from screen import Screen
+from messagebox import Messagebox
+from baseclasses import Abstract_manager
 
-# from colorama import Fore, Back, Style
-# colorama.init(autoreset=True)
 
 """ 
 |------------------------------------------|
@@ -29,7 +28,7 @@ from notes import Notes
 """
 
 
-class Notes_manager:
+class Notes_manager(Abstract_manager):
     """ Клас менеджер нотаток """
     def __init__(self, notes: Notes, tag_word: str) -> None:
         self._notes = notes

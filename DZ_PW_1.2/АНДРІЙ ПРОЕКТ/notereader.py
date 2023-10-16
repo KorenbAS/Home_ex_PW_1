@@ -1,10 +1,10 @@
 from note import Note
 from screen import Screen
 from console import *
-
-import colorama
+from baseclasses import Abstract_reader
 from colorama import Fore, Back, Style
-colorama.init(autoreset=False)
+
+
 
 """ 
 |------------------------------------------|
@@ -26,7 +26,7 @@ colorama.init(autoreset=False)
 """
 
 
-class Note_reader:
+class Note_reader(Abstract_reader):
     """ Отримує від користувача дані для нотатки та повертає екземпляр """
     def __init__(self, screen: Screen) -> None:
         self._screen = screen

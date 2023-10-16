@@ -9,6 +9,10 @@ from notesmanager import Notes_manager
 from contactsmanager import Contacts_manager
 from valuereader import Value_reader
 
+import colorama
+colorama.init(autoreset=True)
+
+
 # шляхи до файлів
 NOTES_FILE = 'notes.bin'
 CONTACS_FILE = 'contacts.bin'
@@ -53,8 +57,8 @@ hide_cursor()
 # екземпляри класів меню
 main_menu = Menu(
     Screen('Персональний помічник', 'ESC - вихід | ENTER - вибір | Вверх/Вниз - навігація'), MAIN_MENU)
-contacts_menu = Menu(Screen(
-    'Книга контактів', 'ESC - вихід | ENTER - вибір | Вверх/Вниз - навігація'), CONTAСTS_MENU)
+contacts_menu = Menu(
+    Screen('Книга контактів', 'ESC - вихід | ENTER - вибір | Вверх/Вниз - навігація'), CONTAСTS_MENU)
 notes_menu = Menu(
     Screen('Нотатки', 'ESC - вихід | ENTER - вибір | Вверх/Вниз - навігація'), NOTES_MENU)
 

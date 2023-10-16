@@ -1,6 +1,6 @@
-from note import Note
 import os
 import pickle
+from note import Note
 
 
 class Notes:

@@ -1,7 +1,8 @@
-from contact import Contact
-from valuereader import Value_reader
-from validator import Validator
 from screen import Screen
+from contact import Contact
+from validator import Validator
+from valuereader import Value_reader
+from baseclasses import Abstract_reader
 
 """ 
 |------------------------------------------|
@@ -22,7 +23,7 @@ from screen import Screen
 """
 
 
-class Contact_reader:
+class Contact_reader(Abstract_reader):
     """ Клас що отримує в користувача дані контакту та перевіряє їх правильність """
     NAME_PATTERN = r"^[a-zA-Zа-яА-ЯіїєґІЇЄҐ0-9 ,.]{3,24}$"
     ADDRESS_PATTERN = r"(|(^[a-zA-Zа-яА-ЯіїєґІЇЄҐ0-9 ,.\/]{3,24}))$"
@@ -71,8 +72,4 @@ class Contact_reader:
             Validator(Contact_reader.DATE_PATTERN)
         ).read()
 
-
         return Contact(name, address, phones, emails, birthday)
-
-
-

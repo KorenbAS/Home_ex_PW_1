@@ -7,6 +7,7 @@ from contacts import Contacts
 from contactreader import Contact_reader
 from validator import Validator
 from valuereader import Value_reader
+from baseclasses import Abstract_manager
 
 """ 
 |------------------------------------------|
@@ -31,7 +32,7 @@ from valuereader import Value_reader
 """
 
 
-class Contacts_manager:
+class Contacts_manager(Abstract_manager):
     """ Клас що описує сутність - менеджер контактів  """
     def __init__(self, constacts: Contacts, key_word: str | None) -> None:
         self._contacts = constacts

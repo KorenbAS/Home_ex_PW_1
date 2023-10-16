@@ -1,9 +1,8 @@
 from console import *
-import colorama
 from screen import Screen
-
+from baseclasses import Abstract_view
 from colorama import Fore, Back, Style
-colorama.init(autoreset=True)
+
 
 """ 
 |------------------------------------------|
@@ -27,7 +26,7 @@ colorama.init(autoreset=True)
 
 
 
-class Messagebox:
+class Messagebox(Abstract_view):
     """ Просто виводить текст на екран """
     def __init__(self, screen: Screen, msg: str) -> None:
         self._screen = screen
